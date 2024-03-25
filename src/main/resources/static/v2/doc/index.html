@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"> <!-- Important: rapi-doc uses utf8 characters -->
+    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=yes">
+
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100;500&family=Roboto:wght@400;700&display=swap"
+          rel="stylesheet">
+    <link href="/v2/doc/doc.css" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="/v2/doc/favicon.ico">
+
+    <script type="module" src="https://unpkg.com/rapidoc@9.3.4/dist/rapidoc-min.js"></script>
+    <script type="application/javascript" src="/v2/doc/doc.js"></script>
+    
+    <title>API Documentation</title>
+  </head>
+
+  <body>
+    <rapi-doc id="thedoc" spec-url="/v2/doc/open-api"
+              sort-endpoints-by="method"
+              theme="light"
+              css-file="doc.css"
+              css-classes="#api-info"
+              primary-color="#0073E5"
+              regular-font="Roboto,Avenir,'Segoe UI',Arial,sans-serif"
+              mono-font="Roboto Mono"
+              nav-bg-color="#3E4B54"
+              nav-accent-color="#FD6964"
+              render-style="read"
+              show-header="false"
+              allow-spec-file-download="true"
+              show-curl-before-try="true"
+              schema-style="tree"
+    >
+
+      <img slot="nav-logo" src="/v2/doc/logo.png" class="hw-logo" alt="logo"/>
+    </rapi-doc>
+  </body>
+</html>

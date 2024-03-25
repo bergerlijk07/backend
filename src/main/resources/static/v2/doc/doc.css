@@ -1,0 +1,26 @@
+rapi-doc::part(section-navbar-active-item) {
+    border-left: 4px solid #FEC32E
+}
+
+rapi-doc::part(section-tag) {
+    border: none;
+}
+
+rapi-doc::part(operation-divider) {
+    margin-top: 0;
+}
+
+rapi-doc::part(section-operations-in-tag) {
+    padding-top: 0;
+}
+
+#api-info {
+    padding-left: 15px;
+}
+
+.hw-logo {
+    padding-left: 30%;
+    padding-bottom: 8px;
+    width: 121px;
+    height: 32px
+}
