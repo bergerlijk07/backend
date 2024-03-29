@@ -50,13 +50,14 @@ jobs:
           tags: ${{ secrets.DOCKER_HUB_USERNAME}}/backend:latest
 
       - name: Deploy the Docker image on EC2 Using SSH Key
-        uses: fifsky/ssh-action@master
-        with:
-          host: ${{ secrets.EC2_HOST }}
-          user: ${{ secrets.EC2_USERNAME }}
-          key: $ {{ secrets.EC2_PRIVATE_KEY }}
-          port: 22
-          command: |
+        env:
+          PRIVATE_KEY: ${{ secrets.EC2_PRIVATE_KEY }}
+          HOSTNAME: ${{ secrets.EC2_HOST }}
+          USERNAME: ${{ secrets.EC2_USERNAME }}
+        run: |
+          echo "$PRIVATE_KEY" > private_key
+          chmod 600 private_key
+          ssh -v -o StrictHostKeyChecking=no -i private_key ${USERNAME}@${HOSTNAME} '
             docker stop backend || true
             docker rm backend || true
             docker pull ${{ secrets.DOCKER_HUB_USERNAME}}/backend:latest
