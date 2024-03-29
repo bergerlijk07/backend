@@ -57,7 +57,7 @@ jobs:
         run: |
           echo "$PRIVATE_KEY" > private_key
           chmod 600 private_key
-          ssh -v -o StrictHostKeyChecking=no -i private_key ${USERNAME}@${HOSTNAME} '
+          ssh -v -o StrictHostKeyChecking=no -i private_key ${USERNAME}@${HOSTNAME}
             docker stop backend || true
             docker rm backend || true
             docker pull ${{ secrets.DOCKER_HUB_USERNAME}}/backend:latest
