@@ -49,7 +49,7 @@ jobs:
           push: true
           tags: ${{ secrets.DOCKER_HUB_USERNAME}}/backend:latest
 
-      - name: Deploy the Docker image on EC2 Using SSH
+      - name: Deploy the Docker image on EC2 Using SSH Key
         uses: fifsky/ssh-action@master
         with:
           host: ${{ secrets.EC2_HOST }}
