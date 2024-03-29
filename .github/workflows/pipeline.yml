@@ -50,12 +50,13 @@ jobs:
           tags: ${{ secrets.DOCKER_HUB_USERNAME}}/backend:latest
 
       - name: Deploy the Docker image on EC2 Using SSH
-        uses: appleboy/ssh-action@master
+        uses: fifsky/ssh-action@master
         with:
           host: ${{ secrets.EC2_HOST }}
-          username: ${{ secrets.EC2_USERNAME }}
+          user: ${{ secrets.EC2_USERNAME }}
           key: $ {{ secrets.EC2_PRIVATE_KEY }}
-          script: |
+          port: 22
+          command: |
             docker stop backend || true
             docker rm backend || true
             docker pull ${{ secrets.DOCKER_HUB_USERNAME}}/backend:latest
