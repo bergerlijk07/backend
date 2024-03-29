@@ -60,5 +60,5 @@ jobs:
           ssh -v -o StrictHostKeyChecking=no -i private_key ${USERNAME}@${HOSTNAME}
             docker stop backend || true
             docker rm backend || true
-            docker pull ${{ secrets.DOCKER_HUB_USERNAME}}/backend:latest
-            docker run -d --name backend -p 8080:8080 ${{ secrets.DOCKER_HUB_USERNAME}}/backend:latest
+            docker pull bergerlijk/backend:latest
+            docker run -d --name backend -p 8080:8080 bergerlijk/backend:latest
